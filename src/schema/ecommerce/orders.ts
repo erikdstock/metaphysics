@@ -56,6 +56,7 @@ export const Orders = {
           ${PageInfo}
           totalCount
           edges {
+            cursor
             node {
               ${AllOrderFields}
               lineItems {
