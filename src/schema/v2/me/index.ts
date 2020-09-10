@@ -38,6 +38,7 @@ import { ResolverContext } from "types/graphql"
 import { SaleArtworksConnectionField } from "../sale_artworks"
 import { IdentityVerification } from "./identity_verification"
 import { MyCollection } from "./myCollection"
+import { WatchedLots } from "./watchedLots"
 
 const Me = new GraphQLObjectType<any, ResolverContext>({
   name: "Me",
@@ -200,6 +201,7 @@ const Me = new GraphQLObjectType<any, ResolverContext>({
         )
       },
     },
+    watchedLotsConnection: WatchedLots,
   },
 })
 
@@ -228,6 +230,7 @@ const MeField: GraphQLFieldConfig<void, ResolverContext> = {
       "lotsByFollowedArtistsConnection",
       "identityVerification",
       "unreadNotificationsCount",
+      "watchedLotsConnection",
     ]
     if (includesFieldsOtherThanSelectionSet(info, fieldsNotRequireLoader)) {
       return meLoader()

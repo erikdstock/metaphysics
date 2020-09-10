@@ -13,6 +13,8 @@ export default (accessToken, userID, opts) => {
     gravityAccessTokenLoader
   )
 
+  console.log("UUUUUUU", { userID })
+
   return {
     identityVerificationLoader: gravityLoader(
       (id) => `identity_verification/${id}`
